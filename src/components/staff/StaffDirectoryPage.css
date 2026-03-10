@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+.sdp-page { min-height: 100vh; background: transparent; font-family: 'DM Sans', sans-serif; display: flex; flex-direction: column; }
+.sdp-main { max-width: 1200px; margin: 0 auto; padding: 36px 24px; flex: 1; width: 100%; box-sizing: border-box; }
+
+.sdp-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 28px; flex-wrap: wrap; gap: 20px; }
+.sdp-eyebrow { font-size: 11px; color: #0891b2; letter-spacing: 2px; text-transform: uppercase; margin: 0 0 6px; font-weight: 600; }
+.sdp-title { font-family: 'Playfair Display', serif; font-size: 34px; color: #1e3a8a; margin: 0 0 6px; }
+.sdp-subtitle { font-size: 14px; color: #999; margin: 0; }
+
+.sdp-stats-row { display: flex; gap: 20px; }
+.sdp-stat { background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.6); border-radius: 14px; padding: 16px 24px; text-align: center; box-shadow: 0 4px 20px rgba(30,64,175,0.07); }
+.sdp-stat-num { display: block; font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700; line-height: 1; margin-bottom: 4px; }
+.sdp-stat-label { font-size: 11px; color: #999; letter-spacing: 0.5px; }
+
+.sdp-filter-row { display: flex; gap: 12px; margin-bottom: 28px; flex-wrap: wrap; align-items: center; }
+.sdp-search { flex: 1; min-width: 240px; padding: 12px 16px; border: 1.5px solid #e8e8e5; border-radius: 10px; font-size: 14px; font-family: 'DM Sans', sans-serif; background: rgba(255,255,255,0.85); outline: none; }
+.sdp-search:focus { border-color: #0891b2; }
+.sdp-filters { display: flex; gap: 6px; flex-wrap: wrap; }
+.sdp-filter-btn { padding: 8px 14px; border-radius: 8px; cursor: pointer; font-size: 12px; font-weight: 600; background: rgba(255,255,255,0.85); color: #555; border: 1px solid #e8e8e5; font-family: 'DM Sans', sans-serif; transition: all 0.15s; }
+.sdp-filter-btn.active { background: linear-gradient(135deg, #1e40af, #0891b2); color: #fff; border-color: transparent; }
+
+/* Grid */
+.sdp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+.sdp-card { background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.6); border-radius: 16px; padding: 24px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 20px rgba(30,64,175,0.07); }
+.sdp-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(30,64,175,0.13); }
+
+.sdp-card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.sdp-avatar { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; letter-spacing: 0.5px; }
+.sdp-status-badge { display: flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 20px; }
+.sdp-dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+
+.sdp-card-name { font-family: 'Playfair Display', serif; font-size: 17px; color: #1e3a8a; margin: 0 0 4px; }
+.sdp-card-role { font-size: 13px; color: #888; margin: 0 0 10px; }
+.sdp-dept-tag { display: inline-block; font-size: 10px; font-weight: 600; padding: 3px 10px; border-radius: 20px; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 16px; }
+
+.sdp-card-stats { display: flex; align-items: center; gap: 16px; padding-top: 14px; border-top: 1px solid #f0efed; }
+.sdp-card-stat { display: flex; flex-direction: column; gap: 2px; }
+.sdp-card-stat-num { font-size: 15px; font-weight: 700; color: #1e3a8a; }
+.sdp-card-stat-label { font-size: 10px; color: #bbb; text-transform: uppercase; letter-spacing: 0.5px; }
+.sdp-card-divider { width: 1px; height: 28px; background: #f0efed; }
+
+/* Modal */
+.sdp-modal-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.5); backdrop-filter: blur(4px); z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 24px; }
+.sdp-modal { background: #fff; border-radius: 20px; overflow: hidden; width: 100%; max-width: 440px; box-shadow: 0 24px 80px rgba(0,0,0,0.25); animation: sdp-in 0.25s ease; position: relative; }
+@keyframes sdp-in { from { opacity: 0; transform: scale(0.95) translateY(16px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+
+.sdp-modal-close { position: absolute; top: 14px; right: 14px; background: rgba(0,0,0,0.1); border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 13px; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 1; }
+.sdp-modal-top { padding: 32px 24px 24px; text-align: center; }
+.sdp-modal-avatar { width: 72px; height: 72px; border-radius: 18px; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 700; color: #fff; margin: 0 auto 14px; }
+.sdp-modal-name { font-family: 'Playfair Display', serif; font-size: 22px; color: #1e3a8a; margin: 0 0 4px; }
+.sdp-modal-role { font-size: 14px; color: #888; margin: 0 0 10px; }
+.sdp-modal-dept { display: inline-block; font-size: 11px; font-weight: 600; padding: 4px 12px; border-radius: 20px; letter-spacing: 0.5px; text-transform: uppercase; }
+
+.sdp-modal-body { padding: 20px 24px 24px; display: flex; flex-direction: column; gap: 14px; }
+.sdp-modal-row { display: flex; align-items: flex-start; gap: 12px; }
+.sdp-modal-icon { font-size: 18px; }
+.sdp-modal-label { font-size: 10px; color: #bbb; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; }
+.sdp-modal-value { font-size: 14px; color: #1a1a1a; font-weight: 500; }
+.sdp-modal-status-row { padding-top: 14px; border-top: 1px solid #f0efed; }
+.sdp-modal-status-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 20px; }
+
+@media (max-width: 1024px) { .sdp-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .sdp-grid { grid-template-columns: 1fr; } .sdp-stats-row { flex-wrap: wrap; } }

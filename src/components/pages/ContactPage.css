@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+.cop-page { min-height: 100vh; background: transparent; font-family: 'DM Sans', sans-serif; display: flex; flex-direction: column; }
+.cop-main { max-width: 1100px; margin: 0 auto; padding: 48px 24px; flex: 1; width: 100%; box-sizing: border-box; }
+
+.cop-header { text-align: center; margin-bottom: 40px; }
+.cop-eyebrow { font-size: 11px; color: #0891b2; letter-spacing: 3px; text-transform: uppercase; font-weight: 600; margin: 0 0 10px; }
+.cop-title { font-family: 'Playfair Display', serif; font-size: 40px; color: #1e3a8a; margin: 0 0 10px; }
+.cop-subtitle { font-size: 15px; color: #999; margin: 0; }
+
+.cop-layout { display: grid; grid-template-columns: 320px 1fr; gap: 24px; align-items: start; }
+
+/* Info Panel */
+.cop-info { display: flex; flex-direction: column; gap: 14px; }
+.cop-info-card { background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.6); border-radius: 14px; padding: 18px 20px; display: flex; gap: 14px; align-items: flex-start; box-shadow: 0 4px 20px rgba(30,64,175,0.07); }
+.cop-info-icon { font-size: 22px; flex-shrink: 0; }
+.cop-info-title { font-size: 11px; font-weight: 700; color: #0891b2; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+.cop-info-line { font-size: 13px; color: #555; line-height: 1.6; }
+.cop-social-card { background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.6); border-radius: 14px; padding: 18px 20px; box-shadow: 0 4px 20px rgba(30,64,175,0.07); }
+.cop-social-title { font-size: 11px; font-weight: 700; color: #0891b2; letter-spacing: 1px; text-transform: uppercase; margin: 0 0 12px; }
+.cop-social-row { display: flex; gap: 8px; }
+.cop-social-btn { font-size: 12px; font-weight: 600; color: #1e40af; background: #eff6ff; border-radius: 8px; padding: 6px 14px; cursor: pointer; transition: background 0.15s; }
+.cop-social-btn:hover { background: #dbeafe; }
+
+/* Form */
+.cop-form-card { background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.6); border-radius: 20px; padding: 32px; box-shadow: 0 4px 20px rgba(30,64,175,0.07); }
+.cop-form-title { font-family: 'Playfair Display', serif; font-size: 22px; color: #1e3a8a; margin: 0 0 24px; }
+.cop-field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.cop-field { margin-bottom: 18px; }
+.cop-label { display: block; font-size: 11px; font-weight: 600; color: #555; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+.cop-input, .cop-textarea { width: 100%; padding: 13px 16px; border: 1.5px solid #e8e8e5; border-radius: 10px; font-size: 14px; font-family: 'DM Sans', sans-serif; color: #1a1a1a; background: rgba(255,255,255,0.7); outline: none; box-sizing: border-box; transition: border-color 0.2s; }
+.cop-input:focus, .cop-textarea:focus { border-color: #0891b2; }
+.cop-textarea { resize: vertical; }
+.cop-submit-btn { width: 100%; background: linear-gradient(135deg, #1e40af, #0891b2); color: #fff; border: none; border-radius: 12px; padding: 15px; font-size: 15px; font-weight: 600; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: opacity 0.2s, transform 0.15s; }
+.cop-submit-btn:hover { opacity: 0.92; transform: translateY(-1px); }
+.cop-submit-btn.loading, .cop-submit-btn:disabled { opacity: 0.65; cursor: not-allowed; transform: none; }
+
+/* Success */
+.cop-success { text-align: center; padding: 80px 24px; }
+.cop-success-icon { font-size: 64px; margin-bottom: 20px; }
+.cop-success-title { font-family: 'Playfair Display', serif; font-size: 36px; color: #1e3a8a; margin: 0 0 12px; }
+.cop-success-desc { font-size: 15px; color: #888; max-width: 420px; margin: 0 auto 28px; line-height: 1.7; }
+.cop-success-btn { background: linear-gradient(135deg, #1e40af, #0891b2); color: #fff; border: none; border-radius: 12px; padding: 13px 28px; font-size: 14px; font-weight: 600; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+
+@media (max-width: 768px) { .cop-layout { grid-template-columns: 1fr; } .cop-field-row { grid-template-columns: 1fr; } }

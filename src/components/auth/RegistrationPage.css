@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+.reg-page { /* colorful theme */
+  min-height: 100vh;
+  background: transparent;
+  font-family: 'DM Sans', sans-serif;
+  padding: 40px 24px;
+}
+
+.reg-container {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.reg-header {
+  margin-bottom: 32px;
+}
+
+.reg-logo {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  gap: 8px;
+  font-size: 22px;
+}
+
+.reg-logo img{
+  width: 30%;
+  height:auto;
+  border-radius: 6px;
+}
+
+.reg-logo-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  color: #1a1a1a;
+}
+
+.reg-card {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  border: 1px solid #ececea;
+  padding: 36px;
+}
+
+.reg-card-header {
+  margin-bottom: 28px;
+}
+
+.reg-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  color: #1a1a1a;
+  margin: 0 0 8px;
+}
+
+.reg-subtitle {
+  font-size: 14px;
+  color: #999;
+  margin: 0;
+}
+
+.reg-field-group {
+  margin-bottom: 20px;
+}
+
+.reg-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  color: #555;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.reg-role-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.reg-role-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 16px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: left;
+  border: 2px solid #e8e8e5;
+  background: #f7f6f3;
+  transition: all 0.2s;
+}
+
+.reg-role-btn.active {
+  border-color: #1e40af;
+  background: linear-gradient(135deg, #1e40af, #0891b2);
+}
+
+.reg-role-icon {
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+
+.reg-role-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.reg-role-btn.active .reg-role-label {
+  color: #fff;
+}
+
+.reg-role-desc {
+  font-size: 11px;
+  color: #999;
+  line-height: 1.4;
+}
+
+.reg-role-btn.active .reg-role-desc {
+  color: #aaa;
+}
+
+.reg-divider {
+  height: 1px;
+  background: #f0efed;
+  margin: 8px 0 24px;
+}
+
+.reg-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.reg-input {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1.5px solid #e8e8e5;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: 'DM Sans', sans-serif;
+  color: #1a1a1a;
+  background: #f7f6f3;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.reg-input:focus {
+  border-color: #1e40af;
+}
+
+.reg-error {
+  background: #fff5f5;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 13px;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.reg-submit-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #1e40af, #0891b2);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 15px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  margin-bottom: 20px;
+  font-family: 'DM Sans', sans-serif;
+  transition: opacity 0.2s;
+}
+
+.reg-submit-btn.loading,
+.reg-submit-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.reg-login-link {
+  text-align: center;
+  font-size: 13px;
+  color: #999;
+  margin: 0;
+}
+
+.reg-link {
+  color: #1a1a1a;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Success */
+.reg-success-card {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  border: 1px solid #ececea;
+  padding: 56px 36px;
+  text-align: center;
+}
+
+.reg-success-icon {
+  font-size: 56px;
+  margin-bottom: 20px;
+}
+
+.reg-success-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: #1a1a1a;
+  margin: 0 0 12px;
+}
+
+.reg-success-msg {
+  color: #666;
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+
+.reg-go-login-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #1e40af, #0891b2);
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .reg-role-grid,
+  .reg-two-col {
+    grid-template-columns: 1fr;
+  }
+}

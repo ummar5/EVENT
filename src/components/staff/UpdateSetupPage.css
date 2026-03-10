@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+.usp-page { min-height: 100vh; background: transparent; font-family: 'DM Sans', sans-serif; display: flex; flex-direction: column; }
+.usp-main { max-width: 640px; margin: 0 auto; padding: 32px 24px; flex: 1; width: 100%; box-sizing: border-box; }
+.usp-back-link { display: inline-block; color: #888; font-size: 13px; text-decoration: none; margin-bottom: 24px; }
+.usp-back-link:hover { color: #1e3a8a; }
+
+.usp-card { background: rgba(255, 255, 255, 0.85); border-radius: 20px; border: 1px solid #ececea; padding: 36px; }
+.usp-card-top { display: flex; gap: 18px; align-items: flex-start; margin-bottom: 28px; }
+.usp-icon-circle { font-size: 32px; background: #f7f6f3; width: 60px; height: 60px; border-radius: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.usp-subtitle { font-size: 11px; color: #999; letter-spacing: 2px; text-transform: uppercase; margin: 0 0 6px; }
+.usp-title { font-family: 'Playfair Display', serif; font-size: 22px; color: #1e3a8a; margin: 0 0 6px; }
+.usp-hint { font-size: 13px; color: #999; margin: 0; }
+.usp-divider { height: 1px; background: #f0efed; margin: 0 0 28px; }
+
+.usp-section { margin-bottom: 28px; }
+.usp-section-label { display: block; font-size: 12px; font-weight: 600; color: #555; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
+
+.usp-option-grid { display: flex; flex-direction: column; gap: 10px; }
+.usp-option-btn { display: flex; align-items: center; gap: 14px; padding: 16px 18px; border-radius: 12px; cursor: pointer; text-align: left; border: 2px solid #e8e8e5; background: #f7f6f3; transition: all 0.18s; position: relative; }
+
+.usp-option-btn.not-started.active { background: #fef3e2; border-color: #fcd34d; }
+.usp-option-btn.in-progress.active { background: #eff6ff; border-color: #93c5fd; }
+.usp-option-btn.completed.active { background: #e6f9f0; border-color: #6ee7b7; }
+
+.usp-option-icon { font-size: 26px; flex-shrink: 0; }
+.usp-option-label { font-size: 15px; font-weight: 600; color: #1e3a8a; margin-bottom: 2px; }
+.usp-option-btn.not-started.active .usp-option-label { color: #b45309; }
+.usp-option-btn.in-progress.active .usp-option-label { color: #1d4ed8; }
+.usp-option-btn.completed.active .usp-option-label { color: #10b981; }
+.usp-option-desc { font-size: 12px; color: #888; }
+
+.usp-checkmark { position: absolute; right: 16px; top: 50%; transform: translateY(-50%); background: linear-gradient(135deg, #1e40af, #0891b2); color: #fff; font-size: 12px; font-weight: 700; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+.usp-option-btn.not-started.active .usp-checkmark { background: #f59e0b; }
+.usp-option-btn.in-progress.active .usp-checkmark { background: #3b82f6; }
+.usp-option-btn.completed.active .usp-checkmark { background: #10b981; }
+
+.usp-textarea { width: 100%; padding: 14px 16px; border: 1.5px solid #e8e8e5; border-radius: 10px; font-size: 14px; font-family: 'DM Sans', sans-serif; color: #1e3a8a; resize: vertical; outline: none; box-sizing: border-box; background: #f7f6f3; transition: border-color 0.2s; }
+.usp-textarea:focus { border-color: #1e3a8a; }
+
+.usp-error { background: #fff5f5; border: 1px solid #fecaca; color: #b91c1c; border-radius: 10px; padding: 12px 16px; font-size: 13px; margin-bottom: 20px; display: flex; gap: 8px; align-items: center; }
+
+.usp-submit-btn { width: 100%; background: linear-gradient(135deg, #1e40af, #0891b2); color: #fff; border: none; border-radius: 12px; padding: 16px; font-size: 15px; font-weight: 600; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: opacity 0.2s; }
+.usp-submit-btn.disabled { opacity: 0.45; cursor: not-allowed; }
+
+.usp-success-box { text-align: center; padding: 20px 0; }
+.usp-success-icon { font-size: 56px; margin-bottom: 20px; }
+.usp-success-title { font-family: 'Playfair Display', serif; font-size: 28px; color: #1e3a8a; margin: 0 0 12px; }
+.usp-success-msg { color: #666; font-size: 15px; line-height: 1.7; margin-bottom: 32px; }
+.usp-back-btn { display: inline-block; background: linear-gradient(135deg, #1e40af, #0891b2); color: #fff; padding: 14px 28px; border-radius: 10px; text-decoration: none; font-size: 14px; font-weight: 600; }

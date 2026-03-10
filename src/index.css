@@ -1,0 +1,95 @@
+/* ── EventHub index.css — Colorful & Vibrant Theme ── */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #eff6ff 0%, #e0f2fe 50%, #f0fdfa 100%);
+  background-attachment: fixed;
+  color: #1a1a1a;
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: inherit;
+}
+
+button {
+  font-family: 'DM Sans', 'Segoe UI', sans-serif;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  transition: opacity 0.2s;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 2px solid #1e40af;
+  outline-offset: 2px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  color: #1a1a1a;
+}
+
+input,
+textarea,
+select {
+  font-family: 'DM Sans', 'Segoe UI', sans-serif;
+  font-size: 14px;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #eff6ff; }
+::-webkit-scrollbar-thumb { background: #93c5fd; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #0891b2; }
+
+/* ── Animations ── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-in { animation: fadeIn 0.3s ease forwards; }
+
+/* ── Frosted Glass Cards (works with colorful gradient background) ── */
+.cef-card, .arf-card, .rap-card, .usp-card,
+.sep-main-card, .sep-resource-card,
+.vep-stat-card, .vep-event-card,
+.bdp-progress-card, .bdp-card,
+.login-form-box, .reg-card, .reg-success-card {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6) !important;
+  box-shadow: 0 8px 32px rgba(30, 64, 175, 0.08);
+}

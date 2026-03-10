@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+.cep-page { min-height: 100vh; background: transparent; font-family: 'DM Sans', sans-serif; display: flex; flex-direction: column; }
+.cep-main { max-width: 1200px; margin: 0 auto; padding: 36px 24px; flex: 1; width: 100%; box-sizing: border-box; }
+
+/* ── Header ── */
+.cep-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 28px; flex-wrap: wrap; gap: 16px; }
+.cep-eyebrow { font-size: 11px; color: #0891b2; letter-spacing: 2px; text-transform: uppercase; margin: 0 0 6px; font-weight: 600; }
+.cep-title { font-family: 'Playfair Display', serif; font-size: 34px; color: #1e3a8a; margin: 0 0 6px; }
+.cep-subtitle { font-size: 14px; color: #999; margin: 0; }
+.cep-badge-total { background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.6); border-radius: 16px; padding: 20px 28px; text-align: center; box-shadow: 0 4px 20px rgba(30,64,175,0.08); }
+.cep-badge-num { display: block; font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 700; color: #0d9488; line-height: 1; }
+.cep-badge-label { font-size: 11px; color: #999; letter-spacing: 1px; text-transform: uppercase; }
+
+/* ── Search ── */
+.cep-search-row { margin-bottom: 28px; }
+.cep-search { width: 100%; max-width: 480px; padding: 12px 18px; border: 1.5px solid #e8e8e5; border-radius: 10px; font-size: 14px; font-family: 'DM Sans', sans-serif; background: rgba(255,255,255,0.85); outline: none; box-sizing: border-box; }
+.cep-search:focus { border-color: #0891b2; }
+
+/* ── States ── */
+.cep-center-box { display: flex; flex-direction: column; align-items: center; padding: 60px 0; gap: 16px; }
+.cep-spinner { width: 32px; height: 32px; border: 3px solid #eee; border-top: 3px solid #0891b2; border-radius: 50%; animation: cep-spin 0.8s linear infinite; }
+@keyframes cep-spin { to { transform: rotate(360deg); } }
+.cep-loading-text { color: #999; font-size: 14px; }
+.cep-error-box { background: #fff5f5; border: 1px solid #fecaca; color: #b91c1c; border-radius: 10px; padding: 16px; font-size: 14px; }
+.cep-empty-box { text-align: center; padding: 60px 0; color: #999; }
+.cep-empty-icon { font-size: 48px; display: block; margin-bottom: 12px; }
+
+/* ── Square Grid ── */
+.cep-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.cep-card {
+  background: rgba(255,255,255,0.85);
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.6);
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(30,64,175,0.07);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+.cep-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(30,64,175,0.13); }
+
+/* ── Square Image ── */
+.cep-card-banner {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+.cep-banner-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; filter: grayscale(20%); }
+.cep-card:hover .cep-banner-img { transform: scale(1.05); filter: grayscale(0%); }
+.cep-banner-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.5) 100%); }
+
+.cep-checkmark {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 30px;
+  height: 30px;
+  background: #0d9488;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.cep-banner-date {
+  position: absolute;
+  bottom: 10px;
+  left: 12px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.9);
+  font-weight: 500;
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(4px);
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+/* ── Card Body ── */
+.cep-card-body { padding: 16px 18px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.cep-card-title { font-family: 'Playfair Display', serif; font-size: 15px; color: #1e3a8a; margin: 0; line-height: 1.3; }
+.cep-card-location { font-size: 12px; color: #888; margin: 0; }
+.cep-card-desc { font-size: 12px; color: #aaa; margin: 0; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; flex: 1; }
+.cep-card-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 8px; padding-top: 10px; border-top: 1px solid #f0efed; }
+.cep-resource-count { font-size: 11px; color: #bbb; }
+.cep-view-btn { font-size: 12px; color: #0891b2; font-weight: 600; }
+
+/* ── Modal ── */
+.cep-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.cep-modal {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.25);
+  animation: cep-modal-in 0.25s ease;
+}
+@keyframes cep-modal-in {
+  from { opacity: 0; transform: scale(0.95) translateY(16px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.cep-modal-banner { position: relative; height: 240px; overflow: hidden; }
+.cep-modal-img { width: 100%; height: 100%; object-fit: cover; }
+.cep-modal-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.65) 100%); }
+.cep-modal-close { position: absolute; top: 14px; right: 14px; background: rgba(0,0,0,0.4); color: #fff; border: none; border-radius: 50%; width: 32px; height: 32px; font-size: 14px; cursor: pointer; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(4px); }
+.cep-modal-close:hover { background: rgba(0,0,0,0.7); }
+
+.cep-modal-banner-content { position: absolute; bottom: 0; left: 0; right: 0; padding: 20px 24px; }
+.cep-modal-badge { display: inline-block; background: rgba(13,148,136,0.9); color: #fff; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 20px; margin-bottom: 8px; }
+.cep-modal-title { font-family: 'Playfair Display', serif; font-size: 22px; color: #fff; margin: 0; text-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+
+.cep-modal-body { padding: 24px; }
+.cep-modal-desc { font-size: 14px; color: #666; line-height: 1.6; margin: 0 0 20px; }
+
+.cep-modal-info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 24px; }
+.cep-modal-info-item { display: flex; align-items: flex-start; gap: 10px; }
+.cep-modal-info-icon { font-size: 18px; }
+.cep-modal-info-label { font-size: 10px; color: #bbb; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; }
+.cep-modal-info-value { font-size: 13px; color: #1a1a1a; font-weight: 500; }
+
+.cep-modal-section-title { font-size: 11px; color: #999; letter-spacing: 1px; text-transform: uppercase; margin: 0 0 12px; }
+.cep-modal-resource-grid { display: flex; flex-direction: column; gap: 8px; }
+.cep-modal-resource-item { display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: #f7f8fa; border-radius: 10px; }
+.cep-modal-resource-name { font-size: 13px; font-weight: 500; color: #1e3a8a; }
+.cep-modal-resource-type { font-size: 10px; color: #bbb; text-transform: uppercase; letter-spacing: 0.5px; }
+.cep-modal-resource-qty { margin-left: auto; font-size: 13px; font-weight: 700; color: #0891b2; }
+
+@media (max-width: 1024px) { .cep-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) {
+  .cep-grid { grid-template-columns: 1fr; }
+  .cep-modal-info-grid { grid-template-columns: 1fr; }
+}
