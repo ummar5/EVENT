@@ -1,11 +1,15 @@
 import { useState } from "react";
 import AuthService from "../services/authService";
 import "./LoginPage.css";
+import logo from "../../assets/eventhublogo.jpg";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginPage() {
   const [form, setForm] = useState({ username: "", password: "" });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
@@ -21,8 +25,8 @@ export default function LoginPage() {
     setError(null);
     try {
       await AuthService.login(form);
-      window.location.href = AuthService.getDashboardPath();
-    } catch (err) {
+      navigate(AuthService.getDashboardPath());
+    } catch {
       setError("Invalid username or password.");
     } finally {
       setLoading(false);
@@ -38,7 +42,7 @@ export default function LoginPage() {
 
           {/* Logo */}
           <div className="login-logo">
-            <img src="/src/assets/eventhublogo.jpg" alt="logo" />
+<img src={logo} alt="logo" />
             <span className="login-logo-name">EventHub</span>
           </div>
 
@@ -54,7 +58,7 @@ export default function LoginPage() {
           <div className="login-about-block">
             <p className="login-about-title">What is EventHub?</p>
             <p className="login-about-desc">
-              EventHub is a Event Management and Resource Allocation Managemeny System built to simplify how events are planned, staffed and managed.
+Allocation Management System built to simplify
               From booking venues to allocating resources and tracking event status everything in one place.
             </p>
           </div>
